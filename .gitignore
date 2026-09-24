@@ -1,0 +1,8 @@
+# Config de ferramentas locais / editor
+.vscode/
+.idea/
+.DS_Store
+
+# Arquivos de sessão do PHP (caso configurados localmente)
+sess_*
+*.log
