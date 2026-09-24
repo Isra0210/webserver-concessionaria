@@ -1,16 +1,11 @@
 # Concessionária de Veículos
 
-## Integrantes
+## Autor
 
 - Israel Rodrigues (RA 2062925)
-- (nome e RA do segundo integrante)
-- (nome e RA do terceiro integrante)
 
-## Divisão do trabalho
-
-- Israel: (preencher)
-- (segundo integrante): (preencher)
-- (terceiro integrante): (preencher)
+Projeto desenvolvido individualmente (login, CRUDs, validações e
+documentação).
 
 ## Sobre o projeto
 
