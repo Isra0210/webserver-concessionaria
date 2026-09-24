@@ -1,6 +1,6 @@
 </main>
 <footer class="rodape">
-    <small><?= e(APP_NAME) ?> — Trabalho 1 (PHP puro, MVC). Sem banco de dados nesta fase.</small>
+    <small><?= e(APP_NAME) ?> — Trabalho 1</small>
 </footer>
 </body>
 </html>
