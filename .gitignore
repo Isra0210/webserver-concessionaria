@@ -6,3 +6,6 @@
 # Arquivos de sessão do PHP (caso configurados localmente)
 sess_*
 *.log
+
+# Anotações pessoais (não fazem parte da entrega)
+docs/
