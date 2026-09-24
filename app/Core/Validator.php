@@ -38,7 +38,7 @@ class Validator
             'email'    => ($valor !== '' && !filter_var($valor, FILTER_VALIDATE_EMAIL)) ? 'E-mail inválido.' : null,
             'in'       => ($valor !== '' && !in_array($valor, explode(',', (string) $parametro), true)) ? 'Valor não permitido.' : null,
             'cpf'      => ($valor !== '' && !self::validarCpf($valor)) ? 'CPF inválido.' : null,
-            'telefone' => ($valor !== '' && !preg_match('/^\d{10,11}$/', preg_replace('/\D/', '', $valor))) ? 'Telefone inválido. Use DDD + número.' : null,
+            'telefone' => ($valor !== '' && !self::validarTelefone($valor)) ? 'Telefone inválido. Use DDD + número.' : null,
             'ano'      => self::validarAno($valor),
             default    => null,
         };
@@ -60,8 +60,21 @@ class Validator
         return null;
     }
 
+    private static function validarTelefone(string $valor): bool
+    {
+        if (!preg_match('/^[0-9()\-\s+]+$/', $valor)) {
+            return false;
+        }
+        $numero = preg_replace('/\D/', '', $valor);
+        return (bool) preg_match('/^\d{10,11}$/', $numero);
+    }
+
     private static function validarCpf(string $valor): bool
     {
+        if (!preg_match('/^[0-9.\-]+$/', $valor)) {
+            return false;
+        }
+
         $cpf = preg_replace('/\D/', '', $valor);
 
         if (strlen($cpf) !== 11 || preg_match('/^(\d)\1{10}$/', $cpf)) {
