@@ -37,6 +37,7 @@ class Validator
             'max_val'  => ($valor !== '' && is_numeric($valor) && (float) $valor > (float) $parametro) ? "O valor máximo é {$parametro}." : null,
             'email'    => ($valor !== '' && !filter_var($valor, FILTER_VALIDATE_EMAIL)) ? 'E-mail inválido.' : null,
             'in'       => ($valor !== '' && !in_array($valor, explode(',', (string) $parametro), true)) ? 'Valor não permitido.' : null,
+            'nome'     => ($valor !== '' && !preg_match("/^[\p{L}\s'\-]+$/u", $valor)) ? 'Use apenas letras.' : null,
             'cpf'      => ($valor !== '' && !self::validarCpf($valor)) ? 'CPF inválido.' : null,
             'telefone' => ($valor !== '' && !self::validarTelefone($valor)) ? 'Telefone inválido. Use DDD + número.' : null,
             'ano'      => self::validarAno($valor),

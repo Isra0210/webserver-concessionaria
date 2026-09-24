@@ -7,7 +7,7 @@ class Vendedor
     private const COLECAO = 'vendedores';
 
     public const REGRAS = [
-        'nome'      => ['required', 'min:2', 'max:80'],
+        'nome'      => ['required', 'min:2', 'max:80', 'nome'],
         'email'     => ['required', 'email'],
         'matricula' => ['required', 'min:2', 'max:20'],
         'comissao'  => ['required', 'numeric', 'min_val:0', 'max_val:100'],

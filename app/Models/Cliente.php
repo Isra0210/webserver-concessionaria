@@ -7,7 +7,7 @@ class Cliente
     private const COLECAO = 'clientes';
 
     public const REGRAS = [
-        'nome'     => ['required', 'min:2', 'max:80'],
+        'nome'     => ['required', 'min:2', 'max:80', 'nome'],
         'email'    => ['required', 'email'],
         'telefone' => ['required', 'telefone'],
         'cpf'      => ['required', 'cpf'],
