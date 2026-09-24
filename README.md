@@ -13,11 +13,24 @@ lado do servidor, em PHP.
 Nesta etapa o sistema não usa banco de dados: os dados ficam guardados
 na sessão enquanto o servidor está rodando.
 
+## O que instalar
+
+O projeto só precisa do PHP 8 (ou mais novo). Não usa banco de dados
+nem Composer nesta etapa.
+
+Para instalar o PHP:
+
+- Windows: baixar em https://windows.php.net/download/ ou instalar o
+  XAMPP (https://www.apachefriends.org/).
+- macOS: `brew install php`
+- Linux (Ubuntu/Debian): `sudo apt install php`
+
+Para conferir se instalou certo, rode `php -v`. Deve aparecer algo como
+`PHP 8.x.x`.
+
 ## Como rodar
 
-É preciso ter o PHP 8 instalado (para conferir: `php -v`).
-
-Na pasta do projeto, rode o servidor embutido do PHP apontando para a
+Na pasta do projeto, suba o servidor embutido do PHP apontando para a
 pasta `public`:
 
 ```
@@ -30,3 +43,5 @@ Login de teste:
 
 - Usuário: admin
 - Senha: 123456
+
+Para parar o servidor, aperte Ctrl + C no terminal.
