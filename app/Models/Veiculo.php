@@ -9,8 +9,8 @@ class Veiculo
     public const REGRAS = [
         'modelo'      => ['required', 'min:2', 'max:60'],
         'marca'       => ['required', 'min:2', 'max:40'],
-        'ano'         => ['required', 'int'],
-        'preco'       => ['required', 'numeric'],
+        'ano'         => ['required', 'ano'],
+        'preco'       => ['required', 'numeric', 'min_val:0.01'],
         'combustivel' => ['required', 'in:Gasolina,Etanol,Flex,Diesel,Elétrico'],
     ];
 

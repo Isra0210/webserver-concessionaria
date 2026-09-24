@@ -9,8 +9,8 @@ class Cliente
     public const REGRAS = [
         'nome'     => ['required', 'min:2', 'max:80'],
         'email'    => ['required', 'email'],
-        'telefone' => ['required', 'min:8', 'max:20'],
-        'cpf'      => ['required', 'min:11', 'max:14'],
+        'telefone' => ['required', 'telefone'],
+        'cpf'      => ['required', 'cpf'],
     ];
 
     public static function todos(): array
