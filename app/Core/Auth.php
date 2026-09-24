@@ -10,7 +10,6 @@ class Auth
         $senhaOk   = password_verify($senha, LOGIN_PASS_HASH);
 
         if ($usuarioOk && $senhaOk) {
-            // gera um novo ID de sessão no login para evitar session fixation
             session_regenerate_id(true);
             Session::set('logado', true);
             Session::set('usuario', $usuario);
@@ -32,8 +31,6 @@ class Auth
 
     public static function requireLogin(): void
     {
-        // impede o navegador de guardar páginas protegidas em cache
-        // (senão o botão "voltar" mostraria a página mesmo após o logout)
         self::naoArmazenarEmCache();
 
         if (!self::check()) {
@@ -43,7 +40,6 @@ class Auth
         }
 
         if (self::sessaoExpirada()) {
-            // limpa os dados de login, mas mantém a sessão viva para levar a mensagem
             Session::remove('logado');
             Session::remove('usuario');
             Session::remove('ultima_atividade');
@@ -52,7 +48,6 @@ class Auth
             exit;
         }
 
-        // renova o contador de inatividade a cada requisição válida
         Session::set('ultima_atividade', time());
     }
 

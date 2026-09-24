@@ -62,15 +62,12 @@ class Validator
 
     private static function validarCpf(string $valor): bool
     {
-        // mantém apenas os dígitos (aceita com ou sem máscara)
         $cpf = preg_replace('/\D/', '', $valor);
 
-        // precisa ter 11 dígitos e não pode ser uma sequência repetida (ex.: 11111111111)
         if (strlen($cpf) !== 11 || preg_match('/^(\d)\1{10}$/', $cpf)) {
             return false;
         }
 
-        // confere os dois dígitos verificadores
         for ($t = 9; $t < 11; $t++) {
             $soma = 0;
             for ($i = 0; $i < $t; $i++) {
