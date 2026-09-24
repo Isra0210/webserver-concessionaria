@@ -18,7 +18,7 @@ foreach ([
 }
 
 foreach ([
-    ['nome' => 'Ana Souza',   'email' => 'ana@email.com',   'telefone' => '(51) 99999-1111', 'cpf' => '12345678901'],
+    ['nome' => 'Ana Souza',   'email' => 'ana@email.com',   'telefone' => '(51) 99999-1111', 'cpf' => '12345678909'],
     ['nome' => 'Bruno Lima',  'email' => 'bruno@email.com', 'telefone' => '(51) 98888-2222', 'cpf' => '98765432100'],
 ] as $c) {
     Cliente::criar($c);
